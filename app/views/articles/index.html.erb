@@ -1,3 +1,11 @@
 <h1>List of Articles</h1>
 
+<% @articles.each do |article| %>
+  <p>
+    <strong><%= article.title %></strong><br>
+    <%= article.body.slice(0, 50).concat('...') %>
+    <%= link_to 'Read more', article_path %>
+  </p>
+<% end %>
+
 <%= link_to 'Create article', new_article_path %>
