@@ -3,6 +3,10 @@
   <div class='title-group'>
     <strong><%= form.label :title %></strong><br>
     <%= form.text_field :title %><br>
+
+    <% @article.errors.full_messages_for(:title).each do |msg| %>
+      <%= msg %>
+    <% end %>
   </div>
 
   <br>
@@ -10,6 +14,10 @@
   <div class='body-group'>
     <strong><%= form.label :body %></strong><br>
     <%= form.text_area :body %><br>
+
+    <% @article.errors.full_messages_for(:body).each do |msg| %>
+      <%= msg %>
+    <% end %>
   </div>
 
   <br>
